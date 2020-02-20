@@ -1,0 +1,14 @@
+name: CI
+on:
+  schedule:
+  - cron: "0 2 * * *"
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    # Try to build using powershell (it will take a while)
+    - name: Build (win amd64)
+      run: powershell  .\scripts\build.ps1
