@@ -12,6 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: powershell -Command cp C:\GHTools\powrprof_gosafe.dll %PWD%
     # Try to build using powershell (it will take a while)
     - name: Build (win amd64)
       run: powershell  .\scripts\build.ps1
