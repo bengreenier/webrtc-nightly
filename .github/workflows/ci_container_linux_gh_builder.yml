@@ -1,0 +1,16 @@
+name: Linux gh-builder (ci)
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "infra/containers/linux-gh-builder*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: make build
+        working-directory: infra/containers/linux-gh-builder
