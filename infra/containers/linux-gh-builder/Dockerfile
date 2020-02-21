@@ -32,4 +32,4 @@ USER ghbuilder
 # Configure entrypoint
 ENV GH_TOKEN ""
 ENV GH_URL ""
-ENTRYPOINT actions-runner/config.sh --token ${GH_TOKEN} --url ${GH_URL} && actions-runner/run.sh
+ENTRYPOINT actions-runner/config.sh --unattended --token "${GH_TOKEN}" --url "${GH_URL}" && actions-runner/run.sh
