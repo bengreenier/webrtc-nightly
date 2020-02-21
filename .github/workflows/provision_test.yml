@@ -15,3 +15,4 @@ jobs:
     # Try to build using powershell (it will take a while)
     - name: Build (win amd64)
       run: powershell  .\scripts\build.ps1
+    - run: echo done
