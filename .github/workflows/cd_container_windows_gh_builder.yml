@@ -17,5 +17,5 @@ jobs:
       - name: Docker login
         run: docker login docker.pkg.github.com --username bengreenier --password ${{ secrets.GITHUB_TOKEN }}
       - name: Publish
-        run: make build
+        run: make publish
         working-directory: infra/containers/windows-gh-builder
