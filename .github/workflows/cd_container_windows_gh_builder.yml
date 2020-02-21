@@ -1,0 +1,21 @@
+name: Windows gh-builder (cd)
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "infra/containers/windows-gh-builder/*"
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: make build
+        working-directory: infra/containers/windows-gh-builder
+      - name: Docker login
+        run: docker login docker.pkg.github.com --username bengreenier --password ${{GITHUB_TOKEN}}
+      - name: Publish
+        run: make build
+        working-directory: infra/containers/windows-gh-builder
