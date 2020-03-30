@@ -1,0 +1,18 @@
+name: zzzProvisionTest
+
+on:
+  push:
+    paths:
+      - ".github/workflows/provision_test.yml"
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+    # Try to build using powershell (it will take a while)
+    - name: Build (win amd64)
+      run: powershell  .\scripts\build.ps1
+    - run: echo done2

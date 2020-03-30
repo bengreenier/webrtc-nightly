@@ -30,3 +30,6 @@ Start-Process -WorkingDirectory $rootDir\src -FilePath $toolsDir\autoninja.bat -
 
 # Remove additions to path
 $env:Path = $initPath
+
+# Always fail for now (testing)
+exit 1
