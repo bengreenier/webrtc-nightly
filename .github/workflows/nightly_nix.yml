@@ -24,7 +24,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Get depot_tools
-      run: git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git /datadrive/depot_tools && export PATH=/datadrive/depot_tools:$PATH
+      run: git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git && export PATH=$PWD/depot_tools:$PATH
 
     # Runs a set of commands using the runners shell
     - name: Run the build
