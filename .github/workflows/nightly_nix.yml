@@ -32,5 +32,6 @@ jobs:
         export PATH=$PWD/depot_tools:$PATH
         echo $PATH
         gclient sync
+        cd src
         gn gen out/Default
         autoninja -C out/Default
