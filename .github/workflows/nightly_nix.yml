@@ -24,13 +24,12 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Get depot_tools
-      run: |
-        git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-        export PATH=$PWD/depot_tools:$PATH
-
+      run: git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+        
     # Runs a set of commands using the runners shell
     - name: Run the build
       run: |
-        ./depot_tools/gclient sync
-        ./depot_tools/gn gen out/Default
-        ./depot_tools/autoninja -C out/Default
+        export PATH=$PWD/depot_tools:$PATH
+        gclient sync
+        gn gen out/Default
+        autoninja -C out/Default
