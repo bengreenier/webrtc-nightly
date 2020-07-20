@@ -30,6 +30,7 @@ jobs:
     - name: Run the build
       run: |
         export PATH=$PWD/depot_tools:$PATH
+        echo $PATH
         gclient sync
         gn gen out/Default
         autoninja -C out/Default
