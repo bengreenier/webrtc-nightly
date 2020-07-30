@@ -2,9 +2,12 @@ name: Nightly win
 on:
   schedule:
     - cron: "0 2 * * *"
+  pull_request:
+    branches:
+    - main
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: [self-hosted, Windows]
 
     steps:
       - uses: actions/checkout@v2
